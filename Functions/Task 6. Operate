@@ -1,0 +1,29 @@
+from _functools import reduce
+ 
+def operate(operator, *args):
+    numbers = args
+ 
+    def add(a, b):
+        result = a + b
+        return result
+ 
+    def subtraction(a, b):
+        result = a - b
+        return result
+ 
+    def multiplication(a, b):
+        result = a * b
+        return result
+ 
+    def division(a, b):
+        result = a / b
+        return result
+ 
+    if operator == "+":
+        return reduce(add, numbers)
+    elif operator == "-":
+        return reduce(subtraction, numbers)
+    elif operator == "*":
+        return reduce(multiplication, numbers)
+    elif operator == "/":
+        return reduce(division, numbers)
